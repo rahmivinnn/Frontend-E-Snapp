@@ -38,7 +38,7 @@ export const EnergyTrendChart = ({ data, total }: EnergyTrendChartProps) => {
     if (active && payload && payload.length) {
       return (
         <div className="bg-card border border-border rounded-lg p-2 shadow-lg">
-          <p className="text-sm font-medium">{`Thu, 23 Jul`}</p>
+          <p className="text-sm font-medium">{label}</p>
           <p className="text-lg font-bold text-primary">{`${payload[0].value} kWh`}</p>
         </div>
       );
@@ -138,7 +138,7 @@ export const EnergyTrendChart = ({ data, total }: EnergyTrendChartProps) => {
               {getChartData().map((entry, index) => (
                 <Cell 
                   key={`cell-${index}`} 
-                  fill={index === 3 ? "hsl(var(--primary))" : "hsl(var(--primary-light))"}
+                  fill={entry.name === "Thu" ? "hsl(var(--primary))" : "hsl(var(--muted))"}
                 />
               ))}
             </Bar>

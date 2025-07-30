@@ -9,7 +9,7 @@ interface CO2SummaryProps {
 export const CO2Summary = ({ emitted, avoided }: CO2SummaryProps) => {
   return (
     <motion.div 
-      className="bg-primary rounded-2xl p-4 text-primary-foreground"
+      className="bg-primary rounded-2xl p-3 text-primary-foreground"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
@@ -28,7 +28,7 @@ export const CO2Summary = ({ emitted, avoided }: CO2SummaryProps) => {
         >
           <Leaf size={20} />
         </motion.div>
-        <h3 className="text-lg font-semibold">CO₂ Emissions & Savings</h3>
+        <h3 className="text-base font-semibold">CO₂ Emissions & Savings</h3>
       </motion.div>
       
       <motion.div 
@@ -44,7 +44,7 @@ export const CO2Summary = ({ emitted, avoided }: CO2SummaryProps) => {
           transition={{ duration: 0.4, delay: 0.3 }}
         >
           <motion.div 
-            className="text-2xl font-bold mb-1"
+            className="text-xl font-bold mb-1"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.3, delay: 0.4 }}
@@ -67,7 +67,7 @@ export const CO2Summary = ({ emitted, avoided }: CO2SummaryProps) => {
           transition={{ duration: 0.4, delay: 0.5 }}
         >
           <motion.div 
-            className="text-2xl font-bold mb-1"
+            className="text-xl font-bold mb-1"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.3, delay: 0.6 }}

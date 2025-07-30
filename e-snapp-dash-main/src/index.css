@@ -2,7 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-/* E-snapp Energy App Design System */
+/* e-snapp Energy App Design System */
+
+/* Portrait mode optimization */
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  position: fixed;
+  touch-action: manipulation;
+}
+
+body {
+  position: fixed;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: none;
+}
 
 @layer base {
   :root {
@@ -108,5 +124,15 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  
+  .pt-safe {
+    padding-top: env(safe-area-inset-top);
   }
 }

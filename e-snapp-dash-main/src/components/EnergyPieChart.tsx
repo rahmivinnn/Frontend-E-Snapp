@@ -16,7 +16,7 @@ interface EnergyPieChartProps {
 export const EnergyPieChart = ({ data, total }: EnergyPieChartProps) => {
   return (
     <motion.div 
-      className="bg-card rounded-2xl p-4 shadow-sm"
+      className="bg-card rounded-2xl p-3 shadow-sm"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
@@ -36,7 +36,7 @@ export const EnergyPieChart = ({ data, total }: EnergyPieChartProps) => {
           <Zap size={20} className="text-primary" />
         </motion.div>
         <motion.h3 
-          className="text-lg font-semibold text-foreground"
+          className="text-base font-semibold text-foreground"
           initial={{ opacity: 0, x: -10 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.4, delay: 0.4 }}
@@ -52,7 +52,7 @@ export const EnergyPieChart = ({ data, total }: EnergyPieChartProps) => {
         transition={{ duration: 0.5, delay: 0.5 }}
       >
         <motion.div 
-          className="relative w-32 h-32"
+          className="relative w-28 h-28"
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.6, type: "spring" }}
@@ -83,7 +83,7 @@ export const EnergyPieChart = ({ data, total }: EnergyPieChartProps) => {
           >
             <div className="text-center">
               <motion.div 
-                className="text-lg font-bold text-foreground"
+                className="text-base font-bold text-foreground"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.4, delay: 1 }}
@@ -95,7 +95,7 @@ export const EnergyPieChart = ({ data, total }: EnergyPieChartProps) => {
         </motion.div>
         
         <motion.div 
-          className="flex-1 ml-6 space-y-3"
+          className="flex-1 ml-4 space-y-2"
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.7 }}

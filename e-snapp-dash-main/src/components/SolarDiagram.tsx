@@ -22,13 +22,13 @@ export const SolarDiagram = ({
 
   return (
     <motion.div 
-      className="bg-primary-muted rounded-2xl p-6 relative overflow-hidden"
+      className="bg-blue-50 rounded-2xl p-6 relative overflow-hidden"
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5 }}
     >
       {/* Background illustration area */}
-      <div className="relative h-48 mb-4">
+      <div className="relative h-40 mb-2">
         {/* House */}
         <motion.div 
           className="absolute top-8 right-8 flex flex-col items-center"
@@ -68,7 +68,7 @@ export const SolarDiagram = ({
             animate={{ opacity: 1 }}
             transition={{ duration: 0.3, delay: 0.4 }}
           >
-            Consumo casa:<br />{homeConsumption} kW
+            Consumo casa<br />{homeConsumption} kW
           </motion.div>
         </motion.div>
 
@@ -91,7 +91,7 @@ export const SolarDiagram = ({
             animate={{ opacity: 1 }}
             transition={{ duration: 0.3, delay: 0.3 }}
           >
-            Produzione<br />solare: {solarProduction} W
+            Produzione<br />solare {solarProduction} kW
           </motion.div>
         </motion.div>
 
@@ -115,7 +115,7 @@ export const SolarDiagram = ({
             animate={{ opacity: 1 }}
             transition={{ duration: 0.3, delay: 0.4 }}
           >
-            Ricarica EV:<br />{evCharging} kW
+            Ricarica EV<br />{evCharging} kW
           </motion.div>
         </motion.div>
 
@@ -145,7 +145,7 @@ export const SolarDiagram = ({
             animate={{ opacity: 1 }}
             transition={{ duration: 0.3, delay: 0.6 }}
           >
-            Batteria:<br />{batteryLevel} kW ({batteryPercentage.toFixed(0)}%)
+            Batteria<br />{batteryLevel} kW/{batteryCapacity} kW
           </motion.div>
         </motion.div>
 

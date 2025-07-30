@@ -6,40 +6,40 @@ import { motion } from "framer-motion";
 
 const trendData = {
   day: [
-    { name: "00:00", value: 15 },
-    { name: "06:00", value: 22 },
-    { name: "12:00", value: 18 },
-    { name: "18:00", value: 26 },
+    { name: "00:00", value: 2.5 },
+    { name: "06:00", value: 3.2 },
+    { name: "12:00", value: 4.8 },
+    { name: "18:00", value: 4.2 },
   ],
   week: [
-    { name: "Mon", value: 15 },
-    { name: "Tue", value: 22 },
-    { name: "Wed", value: 18 },
-    { name: "Thu", value: 26 },
-    { name: "Fri", value: 21 },
-    { name: "Sat", value: 13 },
-    { name: "Sun", value: 17 },
+    { name: "Mon", value: 5.5 },
+    { name: "Tue", value: 6.2 },
+    { name: "Wed", value: 8.8 },
+    { name: "Thu", value: 14.7 },
+    { name: "Fri", value: 6.1 },
+    { name: "Sat", value: 5.3 },
+    { name: "Sun", value: 6.3 },
   ],
   month: [
-    { name: "Week 1", value: 120 },
-    { name: "Week 2", value: 140 },
-    { name: "Week 3", value: 110 },
-    { name: "Week 4", value: 130 },
+    { name: "Week 1", value: 12.0 },
+    { name: "Week 2", value: 14.0 },
+    { name: "Week 3", value: 11.0 },
+    { name: "Week 4", value: 15.9 },
   ],
   cycle: [
-    { name: "Jul", value: 250 },
-    { name: "Aug", value: 280 },
+    { name: "Jul", value: 25.0 },
+    { name: "Aug", value: 27.9 },
   ]
 };
 
 const comparisonData = [
-  { period: "mon", amount: 15 },
-  { period: "Tue", amount: 22 },
-  { period: "Wed", amount: 18 },
-  { period: "Thu", amount: 26 },
-  { period: "Fri", amount: 21 },
-  { period: "Sat", amount: 13 },
-  { period: "Sun", amount: 17 },
+  { period: "mon", amount: 5.5 },
+  { period: "Tue", amount: 6.2 },
+  { period: "Wed", amount: 8.8 },
+  { period: "Thu", amount: 14.7 },
+  { period: "Fri", amount: 6.1 },
+  { period: "Sat", amount: 5.3 },
+  { period: "Sun", amount: 6.3 },
 ];
 
 const tabs = [
@@ -104,7 +104,7 @@ export const Trends = () => {
         >
           <CO2Summary
             emitted={42.7}
-            avoided={12.1}
+            avoided={121.1}
           />
         </motion.div>
         
@@ -136,8 +136,8 @@ export const Trends = () => {
               transition={{ duration: 0.3, delay: 0.5 }}
             >
               <div className="text-sm text-muted-foreground mb-1">Cost</div>
-              <div className="text-lg font-bold text-foreground">42.7 kg</div>
-              <div className="text-sm text-destructive">↑ -3.4%</div>
+              <div className="text-lg font-bold text-foreground">€37.50</div>
+              <div className="text-sm text-destructive">↓ -3.4%</div>
             </motion.div>
             
             <motion.div 
@@ -148,7 +148,7 @@ export const Trends = () => {
             >
               <div className="text-sm text-muted-foreground mb-1">CO₂</div>
               <div className="text-lg font-bold text-foreground">42.7 kg</div>
-              <div className="text-sm text-success">↑ +4%</div>
+              <div className="text-sm text-success">↑ +3.5%</div>
             </motion.div>
           </div>
         </motion.div>

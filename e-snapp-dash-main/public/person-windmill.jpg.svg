@@ -1,0 +1,109 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with gradient -->
+  <defs>
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#87CEEB" />
+      <stop offset="100%" stop-color="#4682B4" />
+    </linearGradient>
+    <linearGradient id="grassGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7CFC00" />
+      <stop offset="100%" stop-color="#228B22" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Sky background -->
+  <rect width="800" height="400" fill="url(#skyGradient)" />
+  
+  <!-- Grass -->
+  <rect y="400" width="800" height="200" fill="url(#grassGradient)" />
+  
+  <!-- Windmill -->
+  <g transform="translate(500, 300)">
+    <!-- Tower -->
+    <rect x="-15" y="-150" width="30" height="250" fill="#A9A9A9" />
+    
+    <!-- Hub -->
+    <circle cx="0" cy="-150" r="15" fill="#808080" />
+    
+    <!-- Blades -->
+    <g>
+      <!-- Blade 1 -->
+      <rect x="-10" y="-150" width="20" height="-120" rx="5" fill="#FFFFFF" transform="rotate(0)" />
+      <!-- Blade 2 -->
+      <rect x="-10" y="-150" width="20" height="-120" rx="5" fill="#FFFFFF" transform="rotate(120)" />
+      <!-- Blade 3 -->
+      <rect x="-10" y="-150" width="20" height="-120" rx="5" fill="#FFFFFF" transform="rotate(240)" />
+    </g>
+  </g>
+  
+  <!-- Person -->
+  <g transform="translate(300, 400)">
+    <!-- Head -->
+    <circle cx="0" cy="-100" r="25" fill="#FFD700" />
+    
+    <!-- Body -->
+    <rect x="-25" y="-75" width="50" height="80" rx="10" fill="#228B22" />
+    
+    <!-- Arms -->
+    <rect x="-60" y="-65" width="35" height="15" rx="5" fill="#228B22" />
+    <rect x="25" y="-65" width="35" height="15" rx="5" fill="#228B22" />
+    
+    <!-- Legs -->
+    <rect x="-25" y="5" width="15" height="45" rx="5" fill="#1E90FF" />
+    <rect x="10" y="5" width="15" height="45" rx="5" fill="#1E90FF" />
+    
+    <!-- Shoes -->
+    <rect x="-30" y="50" width="25" height="10" rx="5" fill="#000000" />
+    <rect x="5" y="50" width="25" height="10" rx="5" fill="#000000" />
+    
+    <!-- Face features -->
+    <circle cx="-10" cy="-105" r="3" fill="#000000" />
+    <circle cx="10" cy="-105" r="3" fill="#000000" />
+    <path d="M-10,-90 Q0,-80 10,-90" stroke="#000000" stroke-width="2" fill="none" />
+  </g>
+  
+  <!-- Small windmill models in person's hands -->
+  <g transform="translate(240, 335)">
+    <rect x="0" y="0" width="5" height="15" fill="#A9A9A9" />
+    <circle cx="2.5" cy="0" r="2" fill="#808080" />
+    <g transform="translate(2.5, 0) scale(0.2)">
+      <rect x="-10" y="0" width="20" height="-30" rx="2" fill="#FFFFFF" transform="rotate(0)" />
+      <rect x="-10" y="0" width="20" height="-30" rx="2" fill="#FFFFFF" transform="rotate(120)" />
+      <rect x="-10" y="0" width="20" height="-30" rx="2" fill="#FFFFFF" transform="rotate(240)" />
+    </g>
+  </g>
+  
+  <g transform="translate(360, 335)">
+    <rect x="0" y="0" width="5" height="15" fill="#A9A9A9" />
+    <circle cx="2.5" cy="0" r="2" fill="#808080" />
+    <g transform="translate(2.5, 0) scale(0.2)">
+      <rect x="-10" y="0" width="20" height="-30" rx="2" fill="#FFFFFF" transform="rotate(45)" />
+      <rect x="-10" y="0" width="20" height="-30" rx="2" fill="#FFFFFF" transform="rotate(165)" />
+      <rect x="-10" y="0" width="20" height="-30" rx="2" fill="#FFFFFF" transform="rotate(285)" />
+    </g>
+  </g>
+  
+  <!-- Sun -->
+  <circle cx="100" cy="100" r="40" fill="#FFD700" />
+  <g>
+    <line x1="100" y1="40" x2="100" y2="20" stroke="#FFD700" stroke-width="4" />
+    <line x1="100" y1="160" x2="100" y2="180" stroke="#FFD700" stroke-width="4" />
+    <line x1="40" y1="100" x2="20" y2="100" stroke="#FFD700" stroke-width="4" />
+    <line x1="160" y1="100" x2="180" y2="100" stroke="#FFD700" stroke-width="4" />
+    <line x1="60" y1="60" x2="45" y2="45" stroke="#FFD700" stroke-width="4" />
+    <line x1="140" y1="140" x2="155" y2="155" stroke="#FFD700" stroke-width="4" />
+    <line x1="60" y1="140" x2="45" y2="155" stroke="#FFD700" stroke-width="4" />
+    <line x1="140" y1="60" x2="155" y2="45" stroke="#FFD700" stroke-width="4" />
+  </g>
+  
+  <!-- Clouds -->
+  <g fill="#FFFFFF" opacity="0.8">
+    <ellipse cx="200" cy="150" rx="60" ry="30" />
+    <ellipse cx="250" cy="150" rx="50" ry="25" />
+    <ellipse cx="300" cy="150" rx="40" ry="20" />
+    
+    <ellipse cx="600" cy="100" rx="50" ry="25" />
+    <ellipse cx="650" cy="100" rx="60" ry="30" />
+    <ellipse cx="700" cy="100" rx="40" ry="20" />
+  </g>
+</svg>

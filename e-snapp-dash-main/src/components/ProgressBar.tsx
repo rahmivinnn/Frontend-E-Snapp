@@ -22,7 +22,7 @@ export const ProgressBar = ({
 
   return (
     <motion.div 
-      className={cn("bg-primary-muted rounded-2xl p-4", className)}
+      className={cn("bg-primary-muted rounded-2xl p-3", className)}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
@@ -35,7 +35,7 @@ export const ProgressBar = ({
         transition={{ duration: 0.4, delay: 0.2 }}
       >
         <motion.h3 
-          className="text-lg font-semibold text-foreground flex items-center gap-2"
+          className="text-base font-semibold text-foreground flex items-center gap-2"
           initial={{ x: -20, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.3 }}
@@ -101,7 +101,7 @@ export const ProgressBar = ({
           whileHover={{ scale: 1.05 }}
         >
           <motion.div 
-            className="text-lg font-bold"
+            className="text-base font-bold"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.4, delay: 1.2 }}
@@ -125,7 +125,7 @@ export const ProgressBar = ({
           whileHover={{ scale: 1.05 }}
         >
           <motion.div 
-            className="text-lg font-bold"
+            className="text-base font-bold"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.4, delay: 1.3 }}

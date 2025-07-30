@@ -1,5 +1,4 @@
-import { BarChart, Bar, XAxis, ResponsiveContainer, Tooltip } from "recharts";
-import { Receipt, TrendingUp } from "lucide-react";
+import { BarChart, Bar, XAxis, ResponsiveContainer, Tooltip, Cell } from "recharts";
 import { motion } from "framer-motion";
 
 interface BillingHistoryChartProps {
@@ -13,6 +12,7 @@ const CustomTooltip = ({ active, payload, label }: any) => {
     return (
       <div className="bg-card p-2 rounded-lg shadow-md border border-border">
         <p className="text-sm font-medium">{`${label}: ${payload[0].value}€`}</p>
+        <p className="text-xs text-muted-foreground">estimated kWh: 62.0</p>
       </div>
     );
   }
@@ -21,34 +21,21 @@ const CustomTooltip = ({ active, payload, label }: any) => {
 
 export const BillingHistoryChart = ({ data, change, estimatedCurrent }: BillingHistoryChartProps) => {
   return (
-    <div className="bg-card rounded-2xl p-4 shadow-sm">
+    <div className="bg-card rounded-2xl p-4 shadow-sm mt-4">
       <motion.div 
-        className="flex items-center justify-between mb-4"
+        className="flex items-center justify-between mb-2"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3 }}
       >
-        <div className="flex items-center gap-2">
-          <Receipt size={20} className="text-primary" />
-          <h3 className="text-lg font-semibold text-foreground">Billing History</h3>
-        </div>
-        <div className="bg-primary-light text-primary px-2 py-1 rounded-lg text-sm font-medium">
+        <h3 className="text-sm font-semibold text-foreground">Billing History</h3>
+        <div className="bg-primary-light/30 text-primary px-2 py-0.5 rounded-md text-xs font-medium">
           {change}
         </div>
       </motion.div>
       
       <motion.div 
-        className="flex items-baseline gap-2 mb-4"
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.3, delay: 0.1 }}
-      >
-        <div className="text-3xl font-bold text-foreground">{estimatedCurrent}€</div>
-        <div className="text-sm text-muted-foreground">estimated final bill 80€</div>
-      </motion.div>
-      
-      <motion.div 
-        className="h-32"
+        className="h-28"
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, delay: 0.2 }}
@@ -64,10 +51,17 @@ export const BillingHistoryChart = ({ data, change, estimatedCurrent }: BillingH
             <Tooltip content={<CustomTooltip />} cursor={{ fill: 'rgba(0, 0, 0, 0.05)' }} />
             <Bar 
               dataKey="amount" 
-              fill="hsl(var(--primary))" 
               radius={[4, 4, 0, 0]}
               animationDuration={1500}
-            />
+              barSize={20}
+            >
+              {data.map((entry, index) => (
+                <Cell 
+                  key={`cell-${index}`} 
+                  fill={entry.period === "Oct" ? "hsl(var(--warning))" : "hsl(var(--primary))"}
+                />
+              ))}
+            </Bar>
           </BarChart>
         </ResponsiveContainer>
       </motion.div>

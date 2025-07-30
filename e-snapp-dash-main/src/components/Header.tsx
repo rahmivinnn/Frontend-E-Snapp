@@ -1,6 +1,8 @@
-import { Bell, Plus } from "lucide-react";
+import { Bell, Plus, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface HeaderProps {
   title?: string;
@@ -9,9 +11,20 @@ interface HeaderProps {
 }
 
 export const Header = ({ title, subtitle, showActions = true }: HeaderProps) => {
+  const [hasNotifications, setHasNotifications] = useState(true);
+  const navigate = useNavigate();
+  
+  const handleProfileClick = () => {
+    navigate("/profile");
+  };
+  
+  const handleNotificationClick = () => {
+    setHasNotifications(false);
+    // Could navigate to a notifications page in the future
+  };
   return (
     <motion.div 
-      className="flex items-center justify-between p-4 bg-card"
+      className="flex items-center justify-between p-3 pt-4 bg-card"
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
@@ -24,27 +37,18 @@ export const Header = ({ title, subtitle, showActions = true }: HeaderProps) => 
       >
         <div className="flex items-center space-x-2">
           <motion.div 
-            className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center"
-            initial={{ scale: 0, rotate: -180 }}
-            animate={{ scale: 1, rotate: 0 }}
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
             transition={{ 
               type: "spring", 
               stiffness: 260, 
               damping: 20, 
               delay: 0.2 
             }}
-            whileHover={{ scale: 1.1, rotate: 10 }}
+            whileHover={{ scale: 1.05 }}
           >
-            <span className="text-primary-foreground font-bold text-sm">e</span>
+            <img src="/e-snapp.png" alt="e-snapp logo" className="h-7" />
           </motion.div>
-          <motion.span 
-            className="text-xl font-bold text-primary"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.3, delay: 0.3 }}
-          >
-            e-snapp
-          </motion.span>
         </div>
       </motion.div>
       
@@ -55,14 +59,32 @@ export const Header = ({ title, subtitle, showActions = true }: HeaderProps) => 
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-            <Button variant="ghost" size="icon" className="rounded-full">
-              <Bell size={20} />
+          <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="relative">
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              className="rounded-full"
+              onClick={handleNotificationClick}
+            >
+              <Bell size={22} />
+              {hasNotifications && (
+                <motion.div 
+                  className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full"
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ type: "spring", stiffness: 500 }}
+                />
+              )}
             </Button>
           </motion.div>
           <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-            <Button variant="ghost" size="icon" className="rounded-full">
-              <Plus size={20} />
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              className="rounded-full"
+              onClick={handleProfileClick}
+            >
+              <User size={22} />
             </Button>
           </motion.div>
         </motion.div>

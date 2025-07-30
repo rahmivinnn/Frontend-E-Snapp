@@ -16,7 +16,7 @@ interface HomePerformanceProps {
 export const HomePerformance = ({ score, comparison, prices, improvement }: HomePerformanceProps) => {
   return (
     <motion.div 
-      className="bg-card rounded-2xl p-4 shadow-sm"
+      className="bg-card rounded-2xl p-3 shadow-sm"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
@@ -43,7 +43,7 @@ export const HomePerformance = ({ score, comparison, prices, improvement }: Home
             <Home size={20} className="text-primary" />
           </motion.div>
           <motion.h3 
-            className="text-lg font-semibold text-foreground"
+            className="text-base font-semibold text-foreground"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.4, delay: 0.5 }}
@@ -69,7 +69,7 @@ export const HomePerformance = ({ score, comparison, prices, improvement }: Home
         transition={{ duration: 0.5, delay: 0.7 }}
       >
         <motion.div 
-          className="text-3xl font-bold text-foreground mb-1"
+          className="text-2xl font-bold text-foreground mb-1"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.8 }}
@@ -107,7 +107,7 @@ export const HomePerformance = ({ score, comparison, prices, improvement }: Home
             whileHover={{ scale: 1.1 }}
           ></motion.div>
           <motion.div 
-            className="text-lg font-semibold text-foreground"
+            className="text-sm font-semibold text-foreground"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.4, delay: 1.3 }}
@@ -147,7 +147,7 @@ export const HomePerformance = ({ score, comparison, prices, improvement }: Home
             </motion.div>
           </motion.div>
           <motion.div 
-            className="text-lg font-semibold text-foreground"
+            className="text-sm font-semibold text-foreground"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.4, delay: 1.5 }}
@@ -178,7 +178,7 @@ export const HomePerformance = ({ score, comparison, prices, improvement }: Home
             whileHover={{ scale: 1.1 }}
           ></motion.div>
           <motion.div 
-            className="text-lg font-semibold text-foreground"
+            className="text-sm font-semibold text-foreground"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.4, delay: 1.5 }}

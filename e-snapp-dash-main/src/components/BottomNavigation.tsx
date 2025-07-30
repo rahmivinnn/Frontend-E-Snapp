@@ -1,4 +1,4 @@
-import { Home, TrendingUp, Zap, Euro } from "lucide-react";
+import { Home, TrendingUp, Zap, Euro, User } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
@@ -8,6 +8,7 @@ const navigationItems = [
   { id: "trend", label: "Trend", icon: TrendingUp, path: "/trends" },
   { id: "realtime", label: "Realtime", icon: Zap, path: "/realtime" },
   { id: "economics", label: "Economics", icon: Euro, path: "/billing" },
+  { id: "profile", label: "Profile", icon: User, path: "/profile" },
 ];
 
 export const BottomNavigation = () => {
@@ -16,13 +17,14 @@ export const BottomNavigation = () => {
 
   return (
     <motion.div 
-      className="fixed bottom-0 left-0 right-0 bg-card border-t border-border"
+      className="fixed bottom-0 left-0 right-0 bg-card border-t border-border pb-safe"
+      style={{ paddingBottom: 'env(safe-area-inset-bottom, 0.5rem)' }}
       initial={{ y: 100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ type: "spring", stiffness: 300, damping: 30 }}
     >
-      <div className="flex items-center justify-around py-2 px-4 max-w-md mx-auto">
-        {navigationItems.map((item) => {
+      <div className="flex items-center justify-around py-3 px-4 max-w-md mx-auto">
+        {navigationItems.map((item, index) => {
           const Icon = item.icon;
           const isActive = location.pathname === item.path;
           
@@ -57,10 +59,10 @@ export const BottomNavigation = () => {
                   repeat: isActive ? 1 : 0
                 }}
               >
-                <Icon size={20} className={cn(isActive && "text-primary")} />
+                <Icon size={24} className={cn(isActive && "text-primary")} />
               </motion.div>
               <motion.span 
-                className="text-xs mt-1 font-medium"
+                className="text-[10px] mt-1 font-medium"
                 animate={isActive ? { fontWeight: 700 } : { fontWeight: 500 }}
               >
                 {item.label}

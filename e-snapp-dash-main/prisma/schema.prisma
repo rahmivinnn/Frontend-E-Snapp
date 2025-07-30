@@ -1,0 +1,71 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  // Uncomment baris di bawah ini untuk deployment di Vercel
+  // directUrl = env("DIRECT_URL")
+}
+
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  name      String?
+  password  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  profile   Profile?
+  bills     Bill[]
+}
+
+model Profile {
+  id        String   @id @default(uuid())
+  userId    String   @unique
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  address   String?
+  phone     String?
+  contract  String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Bill {
+  id             String   @id @default(uuid())
+  userId         String
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  amount         Float
+  energyUsed     Float
+  period         String
+  dueDate        DateTime
+  isPaid         Boolean  @default(false)
+  estimatedFinal Float?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model Tariff {
+  id              String   @id @default(uuid())
+  name            String
+  description     String?
+  annualCost      Float
+  estimatedSaving Float?
+  fixedPeriod     Int?
+  isPopular       Boolean  @default(false)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+}
+
+model EnergyConsumption {
+  id        String   @id @default(uuid())
+  userId    String
+  date      DateTime
+  amount    Float
+  category  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

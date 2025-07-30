@@ -1,0 +1,53 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with gradient -->
+  <defs>
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#87CEEB" />
+      <stop offset="100%" stop-color="#1E90FF" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Sky background -->
+  <rect width="800" height="600" fill="url(#skyGradient)" />
+  
+  <!-- Modern house -->
+  <g transform="translate(100, 150)">
+    <!-- Main structure -->
+    <rect x="0" y="100" width="600" height="250" fill="#f5f5f5" />
+    
+    <!-- Roof -->
+    <rect x="-20" y="80" width="640" height="40" fill="#e0e0e0" />
+    
+    <!-- Windows -->
+    <rect x="50" y="150" width="120" height="180" fill="#87CEFA" stroke="#FFFFFF" stroke-width="5" />
+    <rect x="240" y="150" width="120" height="180" fill="#87CEFA" stroke="#FFFFFF" stroke-width="5" />
+    <rect x="430" y="150" width="120" height="180" fill="#87CEFA" stroke="#FFFFFF" stroke-width="5" />
+    
+    <!-- Door -->
+    <rect x="240" y="250" width="120" height="100" fill="#A0522D" />
+    <circle cx="340" cy="300" r="5" fill="#FFD700" />
+  </g>
+  
+  <!-- Pool -->
+  <rect x="100" y="450" width="600" height="150" fill="#00CED1" opacity="0.8" />
+  
+  <!-- Pool reflections -->
+  <path d="M150,460 Q400,500 650,460" stroke="white" stroke-width="2" fill="none" opacity="0.5" />
+  <path d="M200,480 Q400,520 600,480" stroke="white" stroke-width="2" fill="none" opacity="0.5" />
+  
+  <!-- Patio -->
+  <rect x="100" y="400" width="600" height="50" fill="#F5DEB3" />
+  
+  <!-- Sun -->
+  <circle cx="700" cy="100" r="50" fill="#FFD700" />
+  <g>
+    <line x1="700" y1="30" x2="700" y2="10" stroke="#FFD700" stroke-width="4" />
+    <line x1="700" y1="170" x2="700" y2="190" stroke="#FFD700" stroke-width="4" />
+    <line x1="630" y1="100" x2="610" y2="100" stroke="#FFD700" stroke-width="4" />
+    <line x1="770" y1="100" x2="790" y2="100" stroke="#FFD700" stroke-width="4" />
+    <line x1="650" y1="50" x2="635" y2="35" stroke="#FFD700" stroke-width="4" />
+    <line x1="750" y1="150" x2="765" y2="165" stroke="#FFD700" stroke-width="4" />
+    <line x1="650" y1="150" x2="635" y2="165" stroke="#FFD700" stroke-width="4" />
+    <line x1="750" y1="50" x2="765" y2="35" stroke="#FFD700" stroke-width="4" />
+  </g>
+</svg>
